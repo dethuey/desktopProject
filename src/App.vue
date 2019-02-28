@@ -1,63 +1,47 @@
 <template>
-  <div id="app">
-    <div class="left">
-      <div class="menu">
-        <h1 class="title" id="title" v-on:click="menuChange('home')" @mouseover="mouseover('title')">Whirl Whim</h1>
-        <div id="pages" class="pages" v-for="item in menu_items">
-          <div class="page" :id=item.name v-on:click="menuChange(item.page)" @mouseover="mouseover(item.name)">{{item.name}} </div>
-        </div>
-        <search ref="search" :postData=postData @search-results="updateSearch"></search>
-        <a :href="follow.url" target="_blank" v-for="follow in follow_items">
-              <img :id="follow.alt" class="followIcon" alt="follow.alt" :src="require(`@/assets/${follow.imageUrl}`)">
-            </a>
-      </div>
-    </div>
-    
-    <div class="right">
-    
-      <div v-if="currentPage == 'home'">
-        <Post v-if="post < postData.length" v-for="(n,post) in postCount" :postData=postData[post]></Post>
-        <div v-if="postCount < postData.length" class="loadMore" id="load" @mouseover="loadMoreHover" @mouseleave="loadMoreOff" v-on:click="loadMore(postData.id)">
-          load more content
+<div id="nav">
+      <router-link to="/">Home</router-link> |
+      <!--<router-link to="/about":postData="postData" :menu_items, 'about', 'follow_items', 'featured', 'contact'>About</router-link>-->
+      
+      <div class="left">
+        <div class="menu">
+          <router-link to='/'><h1 class="title" id="title" v-on:click="menuChange('blog')" @mouseover="mouseover('title')">Whirl Whim</h1></router-link>
+            <div id="pages" class="pages" v-for="item in menu_items">
+              <router-link class="page" :to='"/" + item.page' @mouseover="mouseover(item.name)"><div class="page" v-on:click="menuChange(item.page)" :id=item.name>{{item.name}}</div></router-link>
+            </div>
+          <search ref="search" :postData=postData @search-results="updateSearch"></search>
+          <a :href="follow.url" target="_blank" v-for="follow in follow_items" >
+            <img :id="follow.alt" class="followIcon" alt="follow.alt" :src="require(`@/assets/${follow.imageUrl}`)">
+          </a>
         </div>
       </div>
-    
-      <div v-if="currentPage == 'search'">
-        <div class="searchResults">
-          search results:
+      <div class="right">
+        <div v-if="currentPage == 'search'">
+          <div class="searchResults">
+            search results:
+          </div>
+          <Post v-if="post < searchResults.length" v-for="(n,post) in postCount" :postData=postData[searchResults[post]]></Post>
+          <div v-if="postCount < searchResults.length" class="loadMore" id="load" @mouseover="loadMoreHover" @mouseleave="loadMoreOff" v-on:click="loadMore(postData.id)">
+            load more content
+          </div>
         </div>
-        <Post v-if="post < searchResults.length" v-for="(n,post) in postCount" :postData=postData[searchResults[post]]></Post>
-        <div v-if="postCount < searchResults.length" class="loadMore" id="load" @mouseover="loadMoreHover" @mouseleave="loadMoreOff" v-on:click="loadMore(postData.id)">
-          load more content
+      
+        <div v-if="currentPage == 'emptySearch'">
+          <div class="searchResults">
+            NO RESULTS FOUND
+            <p class="centerP">consider these popular topics:</p>
+            <Feature :features=featured @search-results="featureClick"></Feature>
+          </div>
         </div>
-      </div>
-    
-      <div v-if="currentPage == 'emptySearch'">
-        <div class="searchResults">
-          NO RESULTS FOUND
-          <p class="centerP">consider these popular topics:</p>
-          <Feature :features=featured @search-results="featureClick"></Feature>
-        </div>
-      </div>
-    
-      <div class="content" v-if="currentPage == 'about'">
-        <img class="image" :src="require(`@/assets/${about.img[0]}`)">
-        <h3>about</h3>
-        <p v-for="(n,p) in about.content.length">
-          {{about.content[p]}}
-        </p>
-      </div>
-      <div class="content" v-if="currentPage === 'contact'">
-        <p class="centerP">{{contact.text}} <a class="emailLink" :href="'mailto:' + contact.link">{{contact.link}}</a></p>
-      </div>
-    
-      <div class="footer">
+        <router-view/>
+        <div class= "footer">
         design created by Danielle Case
       </div>
+    </div>
+      
     
-    </div>
-    </div>
-    </template>
+  </div>
+</template>
 
 <script>
   import Post from './components/post.vue'
@@ -75,9 +59,12 @@
     methods: {
       updateSearch: function(e) {
         this.postCount = 5;
-
+        console.log(e);
+        this.$router.push({ path: 'search' });
         if (e.length == 0) {
           this.currentPage = "emptySearch";
+          //add router.push here
+          this.searchResults = e;
         }
         else {
           this.currentPage = "search";
@@ -137,6 +124,10 @@
 </script>
 
 <style>
+  #blog {
+    border-bottom: 3px solid #879355;
+  }
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -221,6 +212,7 @@
 
   .page {
     border-bottom: thin solid #879355;
+    width: 100%;
   }
 
   .image {

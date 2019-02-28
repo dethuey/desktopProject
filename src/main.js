@@ -10,8 +10,28 @@ new Vue({
   render: h => h(App, {
     props: {
       postData: [{
+          title: "Potassium Chlorate and the IKEA Effect",
+          imageUrl: 'ikea.jpg',
+          shortText: "How the discover of early french chemist lead to the theory of the IKEA effect",
+          post: [
+            "Claude-Louis Berthollet was born in rural France in 1748. He traveled to Paris where he studied medicine. Bored by the medical practice Berthollet was constantly experimenting with chemicals and became well known for his chemical compounds. In his research for developing a substitution for saltpeter, commonly used to make gun powder, Berthollet created the compound Potassium Chlorate. Astounded by its explosive abilities, Bethollet lead a public demonstration of gun powder created with the new compound which resulted in the deaths of 5 people. Because its instability, potassium could not be used in gunpowder, but its influence lead to several other discoveries.",
+            "In the early 1800’s English chemist and druggist John Walker struck a small stick on his fireplace and it caught flame. He had discovered the first friction match. The stick had been soaked in sulfur, and tipped with potassium chlorate, chlorate of potash, and gum. Walker had found a way to contain the explosive properties of potassium chlorate in the first simple and quick way to make fire. His invention sparked several chemist and inventors to develop safer options including the safety match in Sweden.",
+            "Without the invention of matches, the life of young Ingvar Kamprad would have ended completely differently. Ingvar began a profitable business at age 5 by selling matches he had bought in bulk to his neighbors at low rates. This ignited an entrepreneurial itch that lead him to start his business at age 17. Ingvar wanted to buy matches at distributor prices and thus had to build a company. He used his initials and the name of his home town in naming his company: IKEA. His products switch from matches and other small household products to furniture and over the years the IKEA empire was founded on flat-box, build-it-yourself furnishings",
+            "IKEA quickly spread across much of the world and with it what has now been termed as the IKEA effect. Founded on research with IKEA furnishings, the IKEA effect is essentially the increased value and pride in an object that one partially creates. Because of the popularity of IKEA across the world, this effect was easily detected and researched, and its findings confirm the long time theory that work makes for a happy more satisfying life. "
+          ],
+          date: "Feb 3, 2019",
+          id: "ikea",
+          tag: "science influence design research",
+          list: {
+            index: -1,
+            listItems: []
+          },
+          links: [],
+          credit: ""
+        },
+        {
           title: "how to meal plan",
-          imageUrl: "img.jpg",
+          imageUrl: "meal-plan-template.jpg",
           shortText: "A huge game changer for dinner time!",
           post: ["Meal planning is something that takes a bit of time up front but leads to less time spent each night at 5:00 trying to come up with something to eat using the ingredients you already have.",
             "Here are five things I have found useful in meal planning:",
@@ -28,26 +48,45 @@ new Vue({
               "Find recipes that have similar ingredients. Something that is so important to me is not wasting food. With fresh foods like produce it is easy to not eat all of them before they go bad, especially with two people. At my house, if we don’t plan specific ways to eat our vegetables, they stay forgotten in the bottom drawer of our fridge. I have found that if we find one recipe that uses a fruit or vegetable that we don’t usually just snack on, it is best to find another recipe with that ingredient and plan it for the same week. That way you are wasting less, but also saving money by buying exactly what you will use.",
               "Write it down somewhere. I like to write our plans on a calendar we hang on our fridge. Sometimes the days get rearranged based on our schedules but everyone knowing what the plan is for the week helps so much! I generally end up scribbling ideas for the next week in the margins, which makes meal planning easier for the next week."
             ]
-          }
-        },
-        {
-          title: "6",
-          imageUrl: 'img.jpg',
-          shortText: "Morbi feugiat nec nisl in semper. Morbi purus nibh, lobortis id congue sed, sagittis in enim. In mauris nunc, consectetur in ex sed, tincidunt facilisis nunc. Cras hendrerit tortor ac purus euismod tempor.",
+          },
+          links: [],
+          credit: "picture from crystalkarges.com"
+        }, {
+          title: "hope you had a lovely weekend",
+          imageUrl: 'flowers2.jpg',
+          shortText: "",
           post: [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "Vivamus auctor turpis ac odio interdum posuere. Morbi rutrum risus sed neque euismod condimentum. Duis pellentesque, ",
-            "libero ut posuere pharetra, augue nulla molestie mi, convallis fringilla ante orci vel magna. Sed sit amet eros consectetur, commodo augue volutpat,",
-            " condimentum nulla. Aenean imperdiet nunc nec tincidunt gravida. Suspendisse non interdum dui. Maecenas ac elit faucibus, pretium lorem nec, tristique est. ",
-            "Duis ut neque pulvinar, efficitur nunc at, pharetra turpis.\nAenean feugiat, tortor quis efficitur tempor, lacus libero mollis tortor, sed tempor sem quam eget purus. Morbi egestas fringilla euismod. Quisque lacinia pellentesque felis, a sodales nisi condimentum vitae. Donec scelerisque interdum sapien vitae accumsan. Quisque nec est eget lectus ultricies congue. Vestibulum fringilla rhoncus tortor, sit amet cursus ante aliquam ut. Quisque accumsan fringilla erat. Maecenas faucibus iaculis sapien ut dignissim. Phasellus sit amet nulla massa.\nAenean facilisis, odio sed semper tristique, leo purus fringilla mauris, tincidunt scelerisque lectus ex id orci. Nullam at massa a sapien euismod mattis molestie cursus metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam sed mattis orci. Nullam vitae orci nec orci dapibus consequat. Phasellus a tortor nec nisi interdum tempus. Nulla egestas fringilla lorem, nec venenatis erat sodales tristique. Curabitur nec pharetra ex. Cras sem risus, elementum rutrum est at, tincidunt pharetra purus. Nulla molestie hendrerit dapibus. Fusce vitae scelerisque metus. Morbi aliquet et diam at luctus. Donec nec eros nec arcu maximus dignissim in sed dui. Ut quis felis ut quam consectetur aliquam id vel nulla. In sodales venenatis porta. Duis vel porttitor tellus.\n\nAliquam erat volutpat. Morbi semper metus in quam tempor pharetra. Vestibulum quis faucibus nisl. In hac habitasse platea dictumst. Proin ullamcorper nulla vel hendrerit scelerisque. Sed viverra lectus sit amet nisl eleifend porttitor. Mauris sed eros justo. Nulla at lacus in leo feugiat congue in et nunc. Quisque blandit lacus vitae magna porta pellentesque in ut magna. Suspendisse potenti. Etiam tellus risus, vulputate vitae sollicitudin nec, facilisis sit amet velit. Sed non laoreet risus, sit amet blandit nisi",
+            "Hope you all have had a lovely weekend. I was glad to get a little more sleep and take a little care  of me and our apartment. Sundays are my favorite days. I try to not work and just focus on being present. Today we spend time with family, make a yummy meal, and had a nice relaxing day. Here are some links from around the web to help you ease into the work week!"
           ],
-          date: "1.2.2019",
-          id: "mno",
-          tag: "six sixth other tag",
+          date: "Feb 16, 2019",
+          id: "s216",
+          tag: "Friday links",
           list: {
             index: -1,
             listItems: []
-          }
+          },
+          links: [{
+              url: "https://meaningfuleats.com/instant-pot-sausage-lentil-stew/",
+              link: "A delicious lentil stew",
+              text: ""
+            },
+            {
+              url: "https://cupofjo.com/2017/10/amanda-jane-jones-house-tour/",
+              link: "This house tour",
+              text: " is just perfect! I love the design and simplicity"
+            },
+            {
+              url: "https://experiments.withgoogle.com/collection/arts-culture",
+              link: "Google Arts Experiments",
+              text: " inspire me so much by showing the power of technology and art."
+            }, {
+              url: "http://www.melissakaseman.com/#/preschool-pocket-treasures/",
+              link: "Preschool pocket treasures",
+              text: ""
+            }
+          ],
+          credit: "picture from cupofjo.com"
+
         },
         {
           title: "design critique- sun tunnels",
@@ -66,14 +105,52 @@ new Vue({
           list: {
             index: -1,
             listItems: []
-          }
+          },
+          links: [],
+          credit: ""
+        }, {
+          title: "Have a Wonderful Weekend",
+          imageUrl: 'cactus.jpg',
+          shortText: "",
+          post: [
+            "I am so excited for this weekend! It will be a busy one, but a nice change from the work and school week. My mom, aunt and I planned a luncheon baby shower for my sister with some friends and the menu could scream spring any more. I can’t wait to taste all the recipes and see how things get decorated. Here is what we will be cooking up this weekend:"
+          ],
+          date: "Jan 31, 2019",
+          id: "s131",
+          tag: "Friday links",
+          list: {
+            index: -1,
+            listItems: []
+          },
+          links: [{
+              url: "https://www.loveandzest.com/avocado-chicken-caesar-salad/",
+              link: "The yummiest looking caesar salad",
+              text: ""
+            },
+            {
+              url: "http://www.bakinbit.com/2014/02/12/grapefruit-berries-honey-and-mint-salad/",
+              link: "A monochromatic fruit salad",
+              text: " looks oh so delicious."
+            },
+            {
+              url: "https://www.thebakingchocolatess.com/best-lemon-bars/",
+              link: "Lemon bars",
+              text: " are one of my absolute favorite desserts!"
+            }, {
+              url: "https://www.greensnchocolate.com/2015/08/triple-berry-vanilla-cream-pie/",
+              link: "This cream cake",
+              text: " we are making in the form of mini triffles"
+            }
+          ],
+          credit: ""
+
         }
+
       ],
       menu_items: [
-        { name: "blog", page: "home" },
+        { name: "blog", page: "blog" },
         { name: "about", page: "about" },
-        { name: "contact", page: "contact" },
-        { name: "projects", page: "projects" }
+        { name: "contact", page: "contact" }
       ],
       about: {
         content: [
@@ -103,13 +180,13 @@ new Vue({
       ],
       featured: [{
         name: "art",
-        imgUrl: "img.jpg"
+        imgUrl: "ikea2.jpg"
       }, {
         name: "design",
-        imgUrl: "img.jpg"
+        imgUrl: "sunTunnels.jpg"
       }, {
-        name: "recipes",
-        imgUrl: "img.jpg"
+        name: "Friday links",
+        imgUrl: "flowers2.jpg"
       }],
       contact: {
         text: "For more information about the mission of Whirl Whim, collaborative inquiries, or other questions please contact us via email:",

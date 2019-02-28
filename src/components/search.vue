@@ -30,19 +30,14 @@
                 var postArray = [];
                 var tag = []
                 for (var i = 0; i < this.postData.length; i++) {
-                    console.log(this.postData[i]);
                     //check all post titles first
                     if (this.postData[i].title.toUpperCase().includes(query)) {
-                        console.log(this.postData[i].title.toUpperCase());
-                        console.log(query);
                         this.searchResults.push(i);
                     } //check all short text second
                     else if (this.postData[i].shortText.toUpperCase().indexOf(query) != -1) {
-                        console.log("2");
                         shortText.push(i);
                     } //check all tags next
                     else if (this.postData[i].tag.toUpperCase().indexOf(query) != -1) {
-                        console.log("3");
                         tag.push(i);
                     } //lastly check post content
                     else {

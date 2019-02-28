@@ -16,6 +16,13 @@
                 </ol>
             </p>
             
+            <div v-for="(n,q) in postData.links.length">
+                <p>
+                    <a class="links" :href="postData.links[q].url" target="_blank"> {{postData.links[q].link}}</a>
+                    {{postData.links[q].text}}
+                </p>
+            </div>
+            
             <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://18.222.167.94:8080/index.html">
                 <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" class="share" />
             </a>
@@ -47,19 +54,14 @@
         },
         methods: {
             readMore: function(postID) {
-                console.log(this.postData.list.listItems == 2)
                 this.id = postID;
                 var id = 'text' + postID;
-                console.log(id);
                 if (document.getElementById(postID).innerHTML == "read more") {
-                    // document.getElementById(id).innerHTML = this.postData.post;
                     document.getElementById(id).style.marginBottom = "30px";
                     document.getElementById(postID).innerHTML = "close";
                     this.show = true;
                 }
                 else {
-                    // document.getElementById(id).innerHTML = this.postData.shortText;
-
                     document.getElementById(postID).innerHTML = "read more"
                     this.show = false;
                 }
@@ -80,6 +82,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .links {
+        color: #879355;
+        border-bottom: 1px solid #879355;
+    }
+
     .postInfo {
         margin-bottom: 40px;
     }
@@ -110,6 +117,7 @@
         line-height: 40px;
         color: black;
         top: 0px;
+        width: 80%;
     }
 
     .shortText {
